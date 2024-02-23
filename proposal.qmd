@@ -6,9 +6,23 @@ editor: visual
 
 # Proposal
 
-Your proposal should include:
+Hollywood Age Gap 
 
-* A brief description of your dataset including its provenance, dimensions, etc. (Make sure to load the data and use inline code for some of this information.)
-* The reason why you chose this dataset.
-* The two questions you want to answer.
-  + A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+Dataset description: The data was compiled by Lynn Fisher, a web designer. The dataset lists movies featuring romantic couples as observations, and their respective release years, actor names, birthdates, age gaps, and genders.
+
+Why we chose it: We chose this dataset because we were intrigued by the cultural representation of romantic relationships in cinema and how they create social norms and dynamics particularly in regards to gendered expectations.
+
+Questions: Are men typically the older person in the age gap, and has this changed over time?
+
+Are certain directors more likely to have larger age gaps in their films than others?\
+
+Our plan :
+
+Create a variable for average mean age gap between actors for each director
+
+Create a visualization contrasting age gaps in different movies by gender over time
+
+Create a visualization showing average age gap for each director with several movies on the list
+
+\
+\
