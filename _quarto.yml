@@ -2,11 +2,11 @@ project:
   type: website
 
 website:
-  title: Seattle Bike
+  title: Hollywood Age Gap
   navbar:
     right:
       - icon: github
-        href: https://github.com/aallorant/project01-seattle-bike
+        href: https://github.com/math241s24/project01-team-hollywood-age
     left:
       - text: Project
         href: index.qmd
