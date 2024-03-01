@@ -1,8 +1,7 @@
 ---
-title: "About"
+title: "Hollywood Age Gap"
 format: html
 editor: visual
 ---
 
-This project is developed by **Adrien** as a template for the first mini-project of Math/Stat 241 at Reed College.
-
+This project is by [Cassie Minicucci], [Katie Riley], and [Basil-Anne Stackpole]. It uses the dataset Hollywood Age Gap.
