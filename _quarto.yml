@@ -10,11 +10,11 @@ website:
     left:
       - text: Project
         href: index.qmd
-      - text: "Proposal"
+      - text: "Hollywood Age Gap Final Project Proposal"
         href: proposal.qmd
-      - text: "Presentation"
+      - text: "Project Presentation"
         href: presentation.qmd
-      - text: "About"
+      - text: "About Hollywood Age Gap"
         href: about.qmd
 
 format:
