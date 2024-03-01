@@ -20,7 +20,7 @@ Are certain directors more likely to have larger age gaps in their films than ot
 
 Our plan :
 
-Create a variable for average mean age gap between actors for each director
+Create a variable for average mean age gap between actors for each director; we can facet or color by director to achieve this. Since there are >500 directors, we will select the ten with the most movies in the dataset (Woody Allen, John Glen, Martin Scorsese, Mike Newell, Steven Spielberg, Christopher Nolan, David Fincher, Dennis Dugan, Guy Hamilton, and Mike Nichols). These directors are household names and will likely be of interest to our audience. To indicate that a director is an outlier, we can make a box plot and find summary statistics, and then find the directors that are outliers to our expectations. 
 
 Create a visualization contrasting age gaps in different movies by gender over time
 
