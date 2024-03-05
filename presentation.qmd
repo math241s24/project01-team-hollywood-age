@@ -68,7 +68,7 @@ print(movie_stats)
 movies_usable_mean <- movies_usable %>%
   group_by(director) %>%
   summarize(average_age_gap = mean(`age_difference`), n = n()) %>%
-  arrange(desc(n))
+  arrange(desc(average_age_gap))
 
 print(movies_usable_mean)
 
