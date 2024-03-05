@@ -11,6 +11,7 @@ editor_options:
   chunk_output_type: console
 ---
 ```{r}
+library(quarto)
 library(readr)
 library(tidytuesdayR)
 library(dplyr)
