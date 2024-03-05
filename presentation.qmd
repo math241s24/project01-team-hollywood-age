@@ -38,6 +38,7 @@ View(age_gaps)
   
 * Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don’t care how many slides you use to do this.
 
+<<<<<<< HEAD
 Are men typically the older person in the age gap, and has this changed over time?
 ```{r}
 custom_colors <- c("man" = "cyan3", "woman" = "deeppink3", "Other" = "gray")
@@ -53,3 +54,49 @@ age_diff_plot <- ggplot(age_gaps, aes(release_year)) +
 age_diff_plot
 ```
 
+=======
+Directors and Age Gaps:
+```{r}
+movies_1 <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv", show_col_types = FALSE)
+movies_2 <- movies_1 %>% count(director)%>%
+  arrange(desc(n))
+```
+
+```{r}
+movies_1 <- movies_1 %>%
+  group_by(director) %>%
+  mutate(average_age_gap = mean(`age_difference`)) 
+
+```
+
+```{r}
+movies_usable <- subset(movies_1, director %in% c("Woody Allen", "John Glen", "Martin Scorsese", "Mike Newell", "Steven Spielberg", "Christopher Nolan", "David Fincher", "Dennis Dugan", "Guy Hamilton", "Mike Nichols"))
+
+```
+
+
+```{r}
+ggplot(movies_usable, aes(x = director, y = age_difference, fill= director)) +
+  geom_boxplot() +
+  labs(title = "Typical Age Gaps in Hollywood Movies by Common Directors",
+       x = "Director",
+       y = "Age Difference")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
+  theme(legend.position = "none")
+```
+
+```{r}
+movie_stats <- summary(movies_usable$age_difference)
+print(movie_stats)
+
+```
+
+```{r}
+movies_usable_mean <- movies_usable %>%
+  group_by(director) %>%
+  summarize(average_age_gap = mean(`age_difference`), n = n()) %>%
+  arrange(desc(n))
+
+print(movies_usable_mean)
+
+```
+>>>>>>> e3f1cf94cb75995b5d2092fc83f8614fe155ef0f
