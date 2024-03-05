@@ -10,6 +10,16 @@ execute:
 editor_options: 
   chunk_output_type: console
 ---
+```{r}
+library(quarto)
+library(readr)
+library(tidytuesdayR)
+library(dplyr)
+library(ggplot2)
+library(mdsr)
+age_gaps <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv", show_col_types = FALSE)
+View(age_gaps)
+```
 
 ## Outline
 
@@ -29,6 +39,32 @@ editor_options:
   
 * Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&A (question and answer). We don’t care how many slides you use to do this.
 
+<<<<<<< HEAD
+Are men typically the older person in the age gap, and has this changed over time?
+```{r}
+custom_colors <- c("man" = "cyan3", "woman" = "deeppink3", "Other" = "gray")
+
+age_diff_plot <- ggplot(age_gaps, aes(release_year)) +
+  geom_smooth(aes(y = actor_1_age, color = character_1_gender, linetype = "Actor 1")) +
+  geom_smooth(aes(y = actor_2_age, color = character_2_gender, linetype = "Actor 2")) +
+   scale_color_manual(values = custom_colors) +
+  scale_linetype_manual(values = c("solid", "dashed")) +
+  labs( title = "Actor age gaps over time" ,
+        x = "movie release year",
+        y = "actor age")
+age_diff_plot
+```
+
+```{r}
+custom_colors <- c("man" = "cyan3", "woman" = "deeppink3", "Other" = "gray")
+
+older_actors <- ggplot(age_gaps, aes(release_year, color = character_1_gender))+
+  geom_freqpoly() +
+  scale_color_manual(values = custom_colors)
+older_actors
+```
+
+=======
 Directors and Age Gaps:
 ```{r}
 movies_1 <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv", show_col_types = FALSE)
@@ -73,3 +109,4 @@ movies_usable_mean <- movies_usable %>%
 print(movies_usable_mean)
 
 ```
+>>>>>>> e3f1cf94cb75995b5d2092fc83f8614fe155ef0f
