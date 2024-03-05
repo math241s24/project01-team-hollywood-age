@@ -54,6 +54,15 @@ age_diff_plot <- ggplot(age_gaps, aes(release_year)) +
 age_diff_plot
 ```
 
+```{r}
+custom_colors <- c("man" = "cyan3", "woman" = "deeppink3", "Other" = "gray")
+
+older_actors <- ggplot(age_gaps, aes(release_year, color = character_1_gender))+
+  geom_freqpoly() +
+  scale_color_manual(values = custom_colors)
+older_actors
+```
+
 =======
 Directors and Age Gaps:
 ```{r}
