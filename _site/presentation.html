@@ -512,8 +512,9 @@
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Typical Age Gaps in Hollywood Movies by Common Directors"</span>,</span>
 <span id="cb6-4"><a href="#cb6-4"></a>       <span class="at">x =</span> <span class="st">"Director"</span>,</span>
 <span id="cb6-5"><a href="#cb6-5"></a>       <span class="at">y =</span> <span class="st">"Age Difference"</span>)<span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb6-7"><a href="#cb6-7"></a>director_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co">#no legend bc it's obvious from axis labels</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a>director_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -546,23 +547,23 @@
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>movies_usable_mean <span class="ot">&lt;-</span> movies_usable <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(director) <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarize</span>(<span class="at">average_age_gap =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">age_difference</span><span class="st">`</span>), <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(average_age_gap))</span>
 <span id="cb9-5"><a href="#cb9-5"></a></span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="fu">print</span>(movies_usable_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 3
    director          average_age_gap     n
    &lt;chr&gt;                       &lt;dbl&gt; &lt;int&gt;
- 1 Woody Allen                 20.2     20
+ 1 Woody Allen                 20.1     20
  2 John Glen                   19.9     15
- 3 Martin Scorsese             10.9     13
- 4 Mike Newell                  6.7     10
- 5 Steven Spielberg            13.5     10
+ 3 Guy Hamilton                16.2      9
+ 4 Steven Spielberg            13.5     10
+ 5 Martin Scorsese             10.9     13
  6 David Fincher               10.6      9
- 7 Dennis Dugan                 8.67     9
- 8 Guy Hamilton                16.2      9
- 9 Mike Nichols                10.4      9
-10 Christopher Nolan            7.14     7</code></pre>
+ 7 Mike Nichols                10.4      9
+ 8 Dennis Dugan                 8.67     9
+ 9 Christopher Nolan            7.14     7
+10 Mike Newell                  6.7     10</code></pre>
 </div>
 </div>
 <blockquote>

@@ -20,7 +20,7 @@ library(dplyr)
 library(ggplot2)
 library(mdsr)
 age_gaps <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv", show_col_types = FALSE)
-View(age_gaps)
+
 ```
 
 
@@ -147,12 +147,9 @@ director_plot <- ggplot(movies_usable, aes(x = director, y = age_difference, fil
   labs(title = "Typical Age Gaps in Hollywood Movies by Common Directors",
        x = "Director",
        y = "Age Difference")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
-<<<<<<< HEAD
-  theme(legend.position = "none")
-director_plot
-=======
   theme(legend.position = "none") #no legend bc it's obvious from axis labels
->>>>>>> f02eff5dc8e7a4e53aaa07b904073a9f2da89076
+
+director_plot
 ```
 
 ### Plot
