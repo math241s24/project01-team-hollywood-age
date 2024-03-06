@@ -435,8 +435,10 @@
 <span id="cb1-3"><a href="#cb1-3"></a>older_actors <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(age_gaps, <span class="fu">aes</span>(release_year, <span class="at">color =</span> character_1_gender))<span class="sc">+</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">geom_freqpoly</span>() <span class="sc">+</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb1-7"><a href="#cb1-7"></a>older_actors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Older character's gender"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>       <span class="at">x =</span> <span class="st">"Release year"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>older_actors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -458,16 +460,15 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>custom_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"man"</span> <span class="ot">=</span> <span class="st">"cyan3"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"deeppink3"</span>, <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"gray"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>age_diff_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(age_gaps, <span class="fu">aes</span>(release_year)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">y =</span> actor_1_age, <span class="at">color =</span> character_1_gender, <span class="at">linetype =</span> <span class="st">"Actor 1"</span>)) <span class="sc">+</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">y =</span> actor_2_age, <span class="at">color =</span> character_2_gender, <span class="at">linetype =</span> <span class="st">"Actor 2"</span>)) <span class="sc">+</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a>   <span class="fu">scale_color_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"dashed"</span>)) <span class="sc">+</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Actor age gaps over time"</span> ,</span>
-<span id="cb2-9"><a href="#cb2-9"></a>        <span class="at">x =</span> <span class="st">"movie release year"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10"></a>        <span class="at">y =</span> <span class="st">"actor age"</span>) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb2-12"><a href="#cb2-12"></a>age_diff_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3"></a>age_diff_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(age_gaps) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x=</span> release_year, <span class="at">y =</span> actor_1_age, <span class="at">color =</span> character_1_gender)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>   <span class="fu">scale_color_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Actor age gaps over time"</span> ,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>        <span class="at">x =</span> <span class="st">"Movie release year"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8"></a>        <span class="at">y =</span> <span class="st">"Actor age"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9"></a>        <span class="at">color =</span> <span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb2-11"><a href="#cb2-11"></a>age_diff_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -513,7 +514,8 @@
 <span id="cb6-4"><a href="#cb6-4"></a>       <span class="at">x =</span> <span class="st">"Director"</span>,</span>
 <span id="cb6-5"><a href="#cb6-5"></a>       <span class="at">y =</span> <span class="st">"Age Difference"</span>)<span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="co">#no legend bc it's obvious from axis labels</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>director_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a>director_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -565,21 +567,6 @@
 10 Mike Newell                  6.7     10</code></pre>
 </div>
 </div>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>e3f1cf94cb75995b5d2092fc83f8614fe155ef0f</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 </div>
 </div>
 </div>
