@@ -1,0 +1,27 @@
+{
+    "id": "9D724FF4",
+    "path": "~/GitHub/project01-team-hollywood-age/presentation.qmd",
+    "project_path": "presentation.qmd",
+    "type": "quarto_markdown",
+    "hash": "488601711",
+    "contents": "",
+    "dirty": false,
+    "created": 1709664428425.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "chunk_output_type": "console",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "48,0",
+        "scrollLine": "42"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1709683146,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1709683146077,
+    "read_only": false,
+    "read_only_alternatives": []
+}
