@@ -117,7 +117,7 @@ age_diff_plot
 ```{r}
 movies_1 <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv", show_col_types = FALSE)
 movies_2 <- movies_1 %>% count(director)%>%
-  arrange(desc(average_age_gap))
+  arrange(desc(n))
 ```
 
 ```{r}
