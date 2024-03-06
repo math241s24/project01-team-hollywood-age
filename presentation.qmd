@@ -87,14 +87,13 @@ older_actors
 
 custom_colors <- c("man" = "cyan3", "woman" = "deeppink3", "Other" = "gray")
 
-age_diff_plot <- ggplot(age_gaps, aes(release_year)) +
-  geom_smooth(aes(y = actor_1_age, color = character_1_gender, linetype = "Actor 1")) +
-  geom_smooth(aes(y = actor_2_age, color = character_2_gender, linetype = "Actor 2")) +
+age_diff_plot <- ggplot(age_gaps) +
+  geom_smooth(aes(x= release_year, y = actor_1_age, color = character_1_gender)) +
    scale_color_manual(values = custom_colors) +
-  scale_linetype_manual(values = c("solid", "dashed")) +
   labs( title = "Actor age gaps over time" ,
         x = "movie release year",
-        y = "actor age") +
+        y = "actor age",
+        color = "gender") +
   theme_bw()
 age_diff_plot
 ```
