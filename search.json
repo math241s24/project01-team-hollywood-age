@@ -40,5 +40,83 @@
     "title": "About",
     "section": "",
     "text": "This project is developed by Adrien as a template for the first mini-project of Math/Stat 241 at Reed College."
+  },
+  {
+    "objectID": "presentation.html#introduction",
+    "href": "presentation.html#introduction",
+    "title": "Hollywood Age Gap",
+    "section": "Introduction",
+    "text": "Introduction\n\nDataset: Hollywood Age Gap\n\nBy Lynn Fisher, a web designer\nCompiles the age differences between love interests in films\n\n12 variables and 1177 observations before wrangling\nQuestions:\n\nAre men typically the older person in the age gap, and has this changed over time?\nAre certain directors more likely to have larger age gaps in their films than others?"
+  },
+  {
+    "objectID": "presentation.html#are-men-typically-the-older-person-in-the-age-gap-and-has-this-changed-over-time",
+    "href": "presentation.html#are-men-typically-the-older-person-in-the-age-gap-and-has-this-changed-over-time",
+    "title": "Hollywood Age Gap",
+    "section": "Are men typically the older person in the age gap, and has this changed over time?",
+    "text": "Are men typically the older person in the age gap, and has this changed over time?\n\ncustom_colors &lt;- c(\"man\" = \"cyan3\", \"woman\" = \"deeppink3\", \"Other\" = \"gray\")\n\nage_diff_plot &lt;- ggplot(age_gaps, aes(release_year)) +\n  geom_smooth(aes(y = actor_1_age, color = character_1_gender, linetype = \"Actor 1\")) +\n  geom_smooth(aes(y = actor_2_age, color = character_2_gender, linetype = \"Actor 2\")) +\n   scale_color_manual(values = custom_colors) +\n  scale_linetype_manual(values = c(\"solid\", \"dashed\")) +\n  labs( title = \"Actor age gaps over time\" ,\n        x = \"movie release year\",\n        y = \"actor age\") +\n  theme_bw()\nage_diff_plot"
+  },
+  {
+    "objectID": "presentation.html#another-visualization",
+    "href": "presentation.html#another-visualization",
+    "title": "Hollywood Age Gap",
+    "section": "Another visualization",
+    "text": "Another visualization\n\nCodePlot\n\n\n\ncustom_colors &lt;- c(\"man\" = \"cyan3\", \"woman\" = \"deeppink3\", \"Other\" = \"gray\")\n\nage_diff_plot &lt;- ggplot(age_gaps, aes(release_year)) +\n  geom_smooth(aes(y = actor_1_age, color = character_1_gender, linetype = \"Actor 1\")) +\n  geom_smooth(aes(y = actor_2_age, color = character_2_gender, linetype = \"Actor 2\")) +\n   scale_color_manual(values = custom_colors) +\n  scale_linetype_manual(values = c(\"solid\", \"dashed\")) +\n  labs( title = \"Actor age gaps over time\" ,\n        x = \"movie release year\",\n        y = \"actor age\") +\n  theme_bw()\nage_diff_plot"
+  },
+  {
+    "objectID": "presentation.html#directors-and-age-gaps",
+    "href": "presentation.html#directors-and-age-gaps",
+    "title": "Hollywood Age Gap",
+    "section": "Directors and Age Gaps:",
+    "text": "Directors and Age Gaps:\n\nAre certain directors more likely to have larger age gaps in their films than others?\n\n\nmovies_1 &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv\", show_col_types = FALSE)\nmovies_2 &lt;- movies_1 %&gt;% count(director)%&gt;%\n  arrange(desc(n))\n\n\nmovies_1 &lt;- movies_1 %&gt;%\n  group_by(director) %&gt;%\n  mutate(average_age_gap = mean(`age_difference`)) \n\n\nmovies_usable &lt;- subset(movies_1, director %in% c(\"Woody Allen\", \"John Glen\", \"Martin Scorsese\", \"Mike Newell\", \"Steven Spielberg\", \"Christopher Nolan\", \"David Fincher\", \"Dennis Dugan\", \"Guy Hamilton\", \"Mike Nichols\"))\n\n\nggplot(movies_usable, aes(x = director, y = age_difference, fill= director)) +\n  geom_boxplot() +\n  labs(title = \"Typical Age Gaps in Hollywood Movies by Common Directors\",\n       x = \"Director\",\n       y = \"Age Difference\")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "presentation.html#summary-statistics",
+    "href": "presentation.html#summary-statistics",
+    "title": "Hollywood Age Gap",
+    "section": "Summary statistics",
+<<<<<<< HEAD
+    "text": "Summary statistics\n\nSummary statsMean by director\n\n\n\nmovie_stats &lt;- summary(movies_usable$age_difference)\nprint(movie_stats)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   0.00    5.00   13.00   13.59   20.00   40.00 \n\n\n\n\n\nmovies_usable_mean &lt;- movies_usable %&gt;%\n  group_by(director) %&gt;%\n  summarize(average_age_gap = mean(`age_difference`), n = n()) %&gt;%\n  arrange(desc(average_age_gap))\n\nprint(movies_usable_mean)\n\n# A tibble: 10 × 3\n   director          average_age_gap     n\n   &lt;chr&gt;                       &lt;dbl&gt; &lt;int&gt;\n 1 Woody Allen                 20.2     20\n 2 John Glen                   19.9     15\n 3 Guy Hamilton                16.2      9\n 4 Steven Spielberg            13.5     10\n 5 Martin Scorsese             10.9     13\n 6 David Fincher               10.6      9\n 7 Mike Nichols                10.4      9\n 8 Dennis Dugan                 8.67     9\n 9 Christopher Nolan            7.14     7\n10 Mike Newell                  6.7     10\n\n\n\n\n\n\n\n\n\ne3f1cf94cb75995b5d2092fc83f8614fe155ef0f"
+=======
+    "text": "Summary statistics\n\nSummary statsMean by director\n\n\n\nmovie_stats &lt;- summary(movies_usable$age_difference)\nprint(movie_stats)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   0.00    5.00   13.00   13.59   20.00   40.00 \n\n\n\n\n\nmovies_usable_mean &lt;- movies_usable %&gt;%\n  group_by(director) %&gt;%\n  summarize(average_age_gap = mean(`age_difference`), n = n()) %&gt;%\n  arrange(desc(average_age_gap))\n\nprint(movies_usable_mean)\n\n# A tibble: 10 × 3\n   director          average_age_gap     n\n   &lt;chr&gt;                       &lt;dbl&gt; &lt;int&gt;\n 1 Woody Allen                 20.1     20\n 2 John Glen                   19.9     15\n 3 Guy Hamilton                16.2      9\n 4 Steven Spielberg            13.5     10\n 5 Martin Scorsese             10.9     13\n 6 David Fincher               10.6      9\n 7 Mike Nichols                10.4      9\n 8 Dennis Dugan                 8.67     9\n 9 Christopher Nolan            7.14     7\n10 Mike Newell                  6.7     10\n\n\n\n\n\n\n\n\n\ne3f1cf94cb75995b5d2092fc83f8614fe155ef0f"
+>>>>>>> 478a8124d9efb37042fcd0905a8cf228ba21fe38
+  },
+  {
+    "objectID": "presentation.html#conclusion",
+    "href": "presentation.html#conclusion",
+    "title": "Hollywood Age Gap",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nAlthough we can’t come to any causal conclusions due to this being an observational experiment, our data suggests that men are, in fact, typically the older person in an age gap.\nAdditionally, directors like Woody Allen and John Glen seem to feature larger age gaps in their movies, whereas directors like Christopher Nolan and Mike Newell seem more likely to have smaller age gaps."
+  },
+  {
+    "objectID": "presentation.html#relevant-variables",
+    "href": "presentation.html#relevant-variables",
+    "title": "Hollywood Age Gap",
+    "section": "Relevant variables",
+    "text": "Relevant variables\n\nactor_1_age and actor_2_age: ages of both actors in a screened relationship\ncharacter_1_gender and character_2_gender: genders of both characters in a screened relationship\nrelease_year: the year a film was released\nage_difference: the age gap between both partners (in years)\ndirector: the director of the movie"
+  },
+  {
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
+    "title": "Hollywood Age Gap",
+    "section": "Question 1",
+    "text": "Question 1\nAre men typically the older person in the age gap, and has this changed over time?\n\nCodePlot\n\n\n\ncustom_colors &lt;- c(\"man\" = \"cyan3\", \"woman\" = \"deeppink3\", \"Other\" = \"gray\")\n\nolder_actors &lt;- ggplot(age_gaps, aes(release_year, color = character_1_gender))+\n  geom_freqpoly() +\n  scale_color_manual(values = custom_colors) +\n  theme_bw()\nolder_actors"
+  },
+  {
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
+    "title": "Hollywood Age Gap",
+    "section": "Question 2",
+    "text": "Question 2\n\nAre certain directors more likely to have larger age gaps in their films than others?\n\nData wrangling\n\nmovies_1 &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv\", show_col_types = FALSE)\nmovies_2 &lt;- movies_1 %&gt;% count(director)%&gt;%\n  arrange(desc(n))\n\n\nmovies_1 &lt;- movies_1 %&gt;%\n  group_by(director) %&gt;%\n  mutate(average_age_gap = mean(`age_difference`)) \n\n\nmovies_usable &lt;- subset(movies_1, director %in% c(\"Woody Allen\", \"John Glen\", \"Martin Scorsese\", \"Mike Newell\", \"Steven Spielberg\", \"Christopher Nolan\", \"David Fincher\", \"Dennis Dugan\", \"Guy Hamilton\", \"Mike Nichols\"))"
+  },
+  {
+    "objectID": "presentation.html#visualization",
+    "href": "presentation.html#visualization",
+    "title": "Hollywood Age Gap",
+    "section": "Visualization",
+<<<<<<< HEAD
+    "text": "Visualization\n\nCodePlot\n\n\n\ndirector_plot &lt;- ggplot(movies_usable, aes(x = director, y = age_difference, fill= director)) +\n  geom_boxplot() +\n  labs(title = \"Typical Age Gaps in Hollywood Movies by Common Directors\",\n       x = \"Director\",\n       y = \"Age Difference\")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+\n  theme(legend.position = \"none\")#no legend bc it's obvious from axis labels\ndirector_plot"
+=======
+    "text": "Visualization\n\nCodePlot\n\n\n\ndirector_plot &lt;- ggplot(movies_usable, aes(x = director, y = age_difference, fill= director)) +\n  geom_boxplot() +\n  labs(title = \"Typical Age Gaps in Hollywood Movies by Common Directors\",\n       x = \"Director\",\n       y = \"Age Difference\")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+\n  theme(legend.position = \"none\") #no legend bc it's obvious from axis labels\n\ndirector_plot"
+>>>>>>> 478a8124d9efb37042fcd0905a8cf228ba21fe38
   }
 ]

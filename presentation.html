@@ -8,9 +8,9 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.3.450">
 
-  <title>Seattle Bike - Project Presentation</title>
+  <title>Hollywood Age Gap</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #767676;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
+    div.sourceCode
+      { color: #545454; background-color: #fefefe; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #545454; } /* Normal */
+    code span.al { color: #7928a1; } /* Alert */
+    code span.an { color: #696969; } /* Annotation */
+    code span.at { color: #a55a00; } /* Attribute */
+    code span.bn { color: #7928a1; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #d91e18; } /* ControlFlow */
+    code span.ch { color: #008000; } /* Char */
+    code span.cn { color: #d91e18; } /* Constant */
+    code span.co { color: #696969; } /* Comment */
+    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
+    code span.do { color: #696969; font-style: italic; } /* Documentation */
+    code span.dt { color: #7928a1; } /* DataType */
+    code span.dv { color: #7928a1; } /* DecVal */
+    code span.er { color: #7928a1; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #a55a00; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #696969; } /* Information */
+    code span.kw { color: #d91e18; } /* Keyword */
+    code span.op { color: #00769e; } /* Operator */
+    code span.ot { color: #d91e18; } /* Other */
+    code span.pp { color: #7928a1; } /* Preprocessor */
+    code span.sc { color: #00769e; } /* SpecialChar */
+    code span.ss { color: #008000; } /* SpecialString */
+    code span.st { color: #008000; } /* String */
+    code span.va { color: #a55a00; } /* Variable */
+    code span.vs { color: #008000; } /* VerbatimString */
+    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -155,8 +220,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -325,37 +389,197 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Project Presentation</h1>
-  <p class="subtitle">The data we have chosen</p>
+  <h1 class="title">Hollywood Age Gap</h1>
+  <p class="subtitle">Cassie Minicucci, Katie Riley, Basil-Anne Stackpole</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="outline" class="slide level2">
-<h2>Outline</h2>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
 <ul>
-<li><p>Your presentation should generally follow the same structure as your write-up.</p></li>
-<li><p>Each team will have 5 minutes for their presentation, and each team member must speak (roughly equally) during this time.</p></li>
-<li><p>Your presentation will be created using <code>Quarto</code>, which allows you to write slides using the same coding structure you’re used to with <code>Rmarkdown</code>.</p></li>
-<li><p>This is a sample Quarto slide template you can edit to your desire to create your presentation.</p></li>
+<li><p>Dataset: Hollywood Age Gap</p>
+<ul>
+<li>By Lynn Fisher, a web designer</li>
+<li>Compiles the age differences between love interests in films</li>
+</ul></li>
+<li><p>12 variables and 1177 observations before wrangling</p></li>
+<li><p>Questions:</p>
+<ul>
+<li>Are men typically the older person in the age gap, and has this changed over time?</li>
+<li>Are certain directors more likely to have larger age gaps in their films than others?</li>
+</ul></li>
 </ul>
 </section>
-<section id="rubric" class="slide level2">
-<h2>Rubric</h2>
+<section id="relevant-variables" class="slide level2">
+<h2>Relevant variables</h2>
 <ul>
-<li>Roughly I recommend 1 slide for introduction, 2 slides for Question 1, ans 2 slides for Question 2.
+<li>actor_1_age and actor_2_age: ages of both actors in a screened relationship</li>
+<li>character_1_gender and character_2_gender: genders of both characters in a screened relationship</li>
+<li>release_year: the year a film was released</li>
+<li>age_difference: the age gap between both partners (in years)</li>
+<li>director: the director of the movie</li>
+</ul>
+</section>
+<section id="question-1" class="slide level2 smaller">
+<h2>Question 1</h2>
+<p>Are men typically the older person in the age gap, and has this changed over time?</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>custom_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"man"</span> <span class="ot">=</span> <span class="st">"cyan3"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"deeppink3"</span>, <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"gray"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>older_actors <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(age_gaps, <span class="fu">aes</span>(release_year, <span class="at">color =</span> character_1_gender))<span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">geom_freqpoly</span>() <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Older character's gender"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>       <span class="at">x =</span> <span class="st">"Release year"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>older_actors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="another-visualization" class="slide level2">
+<h2>Another visualization</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>custom_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"man"</span> <span class="ot">=</span> <span class="st">"cyan3"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"deeppink3"</span>, <span class="st">"Other"</span> <span class="ot">=</span> <span class="st">"gray"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>age_diff_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(age_gaps) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x=</span> release_year, <span class="at">y =</span> actor_1_age, <span class="at">color =</span> character_1_gender)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>   <span class="fu">scale_color_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">labs</span>( <span class="at">title =</span> <span class="st">"Actor age gaps over time"</span> ,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>        <span class="at">x =</span> <span class="st">"Movie release year"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8"></a>        <span class="at">y =</span> <span class="st">"Actor age"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9"></a>        <span class="at">color =</span> <span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb2-11"><a href="#cb2-11"></a>age_diff_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2" class="slide level2">
+<h2>Question 2</h2>
 <ul>
-<li>You can imagine spending roughly one minute on each slide.</li>
-<li>You should feel free to have more (or fewer) slides.</li>
-</ul></li>
-<li>Your evaluation will be based on your content, professionalism (including sticking to time), and your performance during the Q&amp;A (question and answer). We don’t care how many slides you use to do this.</li>
+<li>Are certain directors more likely to have larger age gaps in their films than others?</li>
+</ul>
+<h3 id="data-wrangling">Data wrangling</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>movies_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>movies_2 <span class="ot">&lt;-</span> movies_1 <span class="sc">%&gt;%</span> <span class="fu">count</span>(director)<span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>movies_1 <span class="ot">&lt;-</span> movies_1 <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">group_by</span>(director) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">mutate</span>(<span class="at">average_age_gap =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">age_difference</span><span class="st">`</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>movies_usable <span class="ot">&lt;-</span> <span class="fu">subset</span>(movies_1, director <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Woody Allen"</span>, <span class="st">"John Glen"</span>, <span class="st">"Martin Scorsese"</span>, <span class="st">"Mike Newell"</span>, <span class="st">"Steven Spielberg"</span>, <span class="st">"Christopher Nolan"</span>, <span class="st">"David Fincher"</span>, <span class="st">"Dennis Dugan"</span>, <span class="st">"Guy Hamilton"</span>, <span class="st">"Mike Nichols"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>director_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(movies_usable, <span class="fu">aes</span>(<span class="at">x =</span> director, <span class="at">y =</span> age_difference, <span class="at">fill=</span> director)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Typical Age Gaps in Hollywood Movies by Common Directors"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4"></a>       <span class="at">x =</span> <span class="st">"Director"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>       <span class="at">y =</span> <span class="st">"Age Difference"</span>)<span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)<span class="co">#no legend bc it's obvious from axis labels</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a>director_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary-statistics" class="slide level2">
+<h2>Summary statistics</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Summary stats</a></li><li><a href="#tabset-4-2">Mean by director</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>movie_stats <span class="ot">&lt;-</span> <span class="fu">summary</span>(movies_usable<span class="sc">$</span>age_difference)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">print</span>(movie_stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    5.00   13.00   13.59   20.00   40.00 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>movies_usable_mean <span class="ot">&lt;-</span> movies_usable <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(director) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarize</span>(<span class="at">average_age_gap =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">age_difference</span><span class="st">`</span>), <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(average_age_gap))</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="fu">print</span>(movies_usable_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+   director          average_age_gap     n
+   &lt;chr&gt;                       &lt;dbl&gt; &lt;int&gt;
+ 1 Woody Allen                 20.2     20
+ 2 John Glen                   19.9     15
+ 3 Guy Hamilton                16.2      9
+ 4 Steven Spielberg            13.5     10
+ 5 Martin Scorsese             10.9     13
+ 6 David Fincher               10.6      9
+ 7 Mike Nichols                10.4      9
+ 8 Dennis Dugan                 8.67     9
+ 9 Christopher Nolan            7.14     7
+10 Mike Newell                  6.7     10</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><p>Although we can’t come to any causal conclusions due to this being an observational experiment, our data suggests that men are, in fact, typically the older person in an age gap.</p></li>
+<li><p>Additionally, directors like Woody Allen and John Glen seem to feature larger age gaps in their movies, whereas directors like Christopher Nolan and Mike Newell seem more likely to have smaller age gaps.</p></li>
 </ul>
 
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
-</div>
 </div>
 </section>
     </div>
@@ -384,6 +608,7 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -568,6 +793,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -644,9 +907,10 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -656,17 +920,8 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
