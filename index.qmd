@@ -28,6 +28,8 @@ Hollywood Age Gap 
 
 We are using the Hollywood Age Gap dataset, compiled by Lynn Fisher, a web designer. It showcases the age differences between love interests in a variety of Hollywood films between 1935 and 2022. The dataset lists movies featuring romantic couples as observations, and their respective release years, actor names, birthdates, age gaps, and genders. There are 12 variables, and 1177 observations. 
 
+The dataset is not a comprehensive list of movies by director or by actor; rather, users suggest movies by tweeting or otherwise contacting Lynn Fisher, who maintains the website and dataset.
+
 	The variables we will use are ‘director,’ a character variable of the director of each film, ‘release_year,’ a numeric column with range 1930-2030 listing the release year of each film, ‘age_difference,’ a numeric column with range 0-55 of each calculated age gap, ‘character_1_gender’ and ‘character_2_gender,’ which are character variables listing the gender of each film character in the relationship, and ‘actor_1_age’ and ‘actor_2_age,’ numerical columns with ranges 15-85 and 15-70 respectively, which list the age of each actor in the film relationship.
 
 Why we chose it: We chose this dataset because we were intrigued by the cultural representation of romantic relationships in cinema and how they create social norms and dynamics particularly in regards to gendered expectations.
@@ -59,6 +61,8 @@ Are men typically the older person in the age gap, and has this changed over tim
 
 \
 This question was posed to try and understand the gendered aspects of age gaps in movies and the patterns of gender and age that appeared in the data. To answer this question we primarily used variables of character gender and actor age. Since the data frame was organized in such a way that the older actor in each relationship was sorted into the column actor_1_age and the younger actor in the relationship was sorted into the column actor_2_age we had a much easier time visualizing the way gender interacted with which actor was older in the age gap. We used the movie’s release date in order to plot the trends over time.
+We used all observations to address this question.
+
 
 #### Approach (1-2 paragraphs):
 
@@ -109,6 +113,8 @@ Are certain directors more likely to have larger age gaps in their films than ot
 With this question, we are investigating whether specific directors have a tendency to have higher age gaps between characters in their films than others. To do this, we need to use the variables of director, age difference between actors, and create a variable for mean age difference by director.
 
  We are interested in this question because it will shed light on systemic gendered expectations in Hollywood and whether those expectations are particularly fostered by certain directors, or whether they are equal across directors. We will only be addressing ten directors- those with the most movies listed- since the dataset is very large and it will be impossible to compare all directors effectively. Additionally, by focusing on the directors with the most movies listed, we increase the likelihood that they are household names to our readers, making the data more relevant. 
+
+We used all observations to address this question.
 
 #### Approach (1-2 paragraphs):
 
