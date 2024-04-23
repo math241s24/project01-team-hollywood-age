@@ -1,12 +1,13 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: Hollywood Age Gap
   navbar:
     right:
       - icon: github
-        href: https://github.com/math241s24/project01-team-hollywood-age
+        href: https://github.com/math241s24/project01-hollywood-age
     left:
       - text: Project
         href: index.qmd
